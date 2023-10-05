@@ -1,4 +1,4 @@
-# Duke
+# BUDGET_PLANNER
 
 {Give product intro here}
 
