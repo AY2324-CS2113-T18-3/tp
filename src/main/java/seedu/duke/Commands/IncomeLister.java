@@ -4,6 +4,9 @@ import seedu.duke.financialrecords.Income;
 import seedu.duke.ui.Ui;
 import java.util.ArrayList;
 
+/**
+ * This class handles the listing of incomes.
+ */
 public class IncomeLister extends Commands {
     private final ArrayList<Income> incomes;
     private final Ui ui;
