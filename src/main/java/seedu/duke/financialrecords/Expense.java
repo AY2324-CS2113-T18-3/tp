@@ -9,6 +9,9 @@ import seedu.duke.commands.KaChinnnngException;
 
 import java.time.LocalDate;
 
+/**
+ * Represents an expense record.
+ */
 public class Expense extends FinancialRecord {
     public Expense(String description, LocalDate date, double amount) throws KaChinnnngException {
         super(description, date, amount);
