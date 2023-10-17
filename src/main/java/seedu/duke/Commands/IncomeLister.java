@@ -4,37 +4,21 @@ import seedu.duke.financialrecords.Income;
 import seedu.duke.ui.Ui;
 import java.util.ArrayList;
 
-/**
- * Represents the command that when executed, lists all incomes.
- * This class is a child class of the Command class.
- *
- */
 public class IncomeLister extends Commands {
     private final ArrayList<Income> incomes;
     private final Ui ui;
 
-    /**
-     * Constructor for IncomeLister.
-     *
-     * @param incomes ArrayList of incomes
-     * @param ui      Instance of Ui
-     */
+    // Updated constructor
     public IncomeLister(ArrayList<Income> incomes, Ui ui) {
         this.incomes = incomes;
         this.ui = ui;
     }
 
-    /**
-     * This method is used to execute the command.
-     */
     @Override
     public void execute() {
         listIncomes();
     }
 
-    /**
-     * This method lists all incomes.
-     */
     // Updated method name to follow Java naming conventions
     public void listIncomes() {
         if (incomes.isEmpty()) {

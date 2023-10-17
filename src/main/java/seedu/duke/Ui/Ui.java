@@ -12,20 +12,10 @@ public class Ui {
     private static final String lineDivider = "____________________________________________________________";
 
     public Scanner scanner;
-
-    /**
-     * Constructor for Ui.
-     */
     public Ui() {
         this.scanner = new Scanner(System.in);
     }
 
-    /**
-     * This method reads the command input by the user.
-     *
-     * @return String containing the command input by the user
-     * @throws KaChinnnngException if there is no input provided by the user
-     */
     public String readCommand() throws KaChinnnngException {
         if (scanner.hasNextLine()) {
             return scanner.nextLine();
@@ -34,9 +24,6 @@ public class Ui {
         }
     }
 
-    /**
-     * This method prints the line divider.
-     */
     public void showLineDivider() {
         System.out.println(lineDivider);
     }
@@ -58,18 +45,10 @@ public class Ui {
         System.out.println(lineDivider);
     }
 
-    /**
-     * prints the message when the user inputs his income
-     *
-     * @param income Income object created from the provided fields
-     */
     public void printIncomeAddedMessage(Income income) {
         System.out.println("Got it. I've added this income: \n" + income.toString());
     }
 
-    /**
-     * Prints a message indicating the start of the income list display.
-     */
     public void printListIncomeMessage() {
         System.out.println("Here are your incomes:");
     }

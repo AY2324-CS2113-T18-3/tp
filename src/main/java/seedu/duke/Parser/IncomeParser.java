@@ -8,25 +8,12 @@ import java.time.format.DateTimeParseException;
 import java.time.format.ResolverStyle;
 import java.util.HashMap;
 
-/**
- * Represents the parser for the Income class.
- * This class serves to parse the user input into a format that the Income class can understand
- */
 public class IncomeParser {
     public static final String DESCRIPTION_FIELD = "de";
     public static final String DATE_FIELD = "da";
     public static final String AMOUNT_FIELD = "am";
     public static final String INDEX_FIELD = "in";
 
-    /**
-     * This method is used to parse the date of the income.
-     * This method is used by the IncomeParser class in the application
-     * This method is used by the IncomeManager class in the application
-     *
-     * @param incomeDateString String containing the date of the income
-     * @return incomeDate LocalDate containing the date of the income
-     * @throws KaChinnnngException if there is an error in the command
-     */
     public static LocalDate parseDate(String incomeDateString) throws KaChinnnngException {
         LocalDate incomeDate;
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/uuuu")
@@ -42,14 +29,6 @@ public class IncomeParser {
         return incomeDate;
     }
 
-    /**
-     * This method is used to parse the fields of the income.
-     * This method is used by the IncomeManager class in the application
-     *
-     * @param argumentsByField HashMap containing the description, date, and amount of the income
-     * @return Income object created from the provided fields
-     * @throws KaChinnnngException if there is an error in the command
-     */
     public static Income parseIncome(HashMap<String, String> argumentsByField) throws KaChinnnngException {
         if (!argumentsByField.containsKey(DESCRIPTION_FIELD) ||
                 !argumentsByField.containsKey(DATE_FIELD) ||
@@ -75,14 +54,6 @@ public class IncomeParser {
         return new Income(incomeDescriptionString, incomeDate, incomeAmount);
     }
 
-    /**
-     * This method is used to get the index of the income.
-     * This method is used by the IncomeDeleter class in the application
-     *
-     * @param argumentsByFields HashMap containing the index of the income
-     * @return index int containing the index of the income
-     * @throws KaChinnnngException if there is an error in the command
-     */
     public static int getIndex(HashMap<String, String> argumentsByFields) throws KaChinnnngException {
         if (!argumentsByFields.containsKey(INDEX_FIELD)) {
             throw new KaChinnnngException("Missing index field detected");

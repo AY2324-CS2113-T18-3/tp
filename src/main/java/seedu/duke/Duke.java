@@ -1,6 +1,5 @@
 package seedu.duke;
 
-import seedu.duke.commands.UsageInstructions;
 import seedu.duke.commands.KaChinnnngException;
 import seedu.duke.ui.Ui;
 import seedu.duke.parser.Parser;
@@ -12,10 +11,6 @@ import java.util.ArrayList;
 import seedu.duke.commands.IncomeLister;
 import seedu.duke.commands.ExpenseLister;
 
-/**
- * This class is the main class of the program.
- * It contains the main method that runs the program.
- */
 public class Duke {
     private Ui ui;
     private ArrayList<Income> incomes;
@@ -64,7 +59,6 @@ public class Duke {
                     new IncomeLister(incomes, ui).listIncomes();
                     break;
 
-<<<<<<< HEAD
                 case "add_expense":
                     try{
                         ExpenseManager expenseCommand = new ExpenseManager(fullCommand);
@@ -84,10 +78,6 @@ public class Duke {
                 case "list_expense":
                     ui.showLineDivider();
                     new ExpenseLister(expenses, ui).listExpenses();
-=======
-                case "help":
-                    new UsageInstructions(ui).getHelp();
->>>>>>> 8f9b494475f77182a35a655b40d0fefb1fcade21
                     break;
 
                 default:
