@@ -11,12 +11,12 @@ import java.time.LocalDate;
 
 public class Expense extends FinancialRecord {
     public Expense(String description, LocalDate date, double amount) throws KaChinnnngException {
-        super(description, date, amount);
+        super(description, date, -amount);
     }
 
     @Override
     public String toString() {
         return "Expense: " + getDescription() +
-                " | Date: " + getDateString() + " | Amount: $" + String.format("%.2f", getAmount());
+                " | Date: " + getDateString() + " | Amount: $" + String.format("%.2f", -getAmount());
     }
 }
