@@ -65,33 +65,41 @@ public class ExpenseParser {
             throw new KaChinnnngException("Expense amount must be between $0.01 and $999999.99");
         }
 
-        return switch (expenseCategoryString) {
-        case "food" -> switch (expenseTypeString) {
-        case "breakfast" -> new Food(expenseDescriptionString, expenseDate, expenseAmount, MealType.BREAKFAST);
-        case "lunch" -> new Food(expenseDescriptionString, expenseDate, expenseAmount, MealType.LUNCH);
-        case "dinner" -> new Food(expenseDescriptionString, expenseDate, expenseAmount, MealType.DINNER);
-        default -> throw new KaChinnnngException("Please enter a valid type field");
-        };
-        case "transport" -> switch (expenseTypeString) {
-        case "train" ->
-                new Transport(expenseDescriptionString, expenseDate, expenseAmount, TransportationType.TRAIN);
-        case "bus" ->
-                new Transport(expenseDescriptionString, expenseDate, expenseAmount, TransportationType.BUS);
-        case "taxi" ->
-                new Transport(expenseDescriptionString, expenseDate, expenseAmount, TransportationType.TAXI);
-        case "fuel" ->
-                new Transport(expenseDescriptionString, expenseDate, expenseAmount, TransportationType.FUEL);
-        default -> throw new KaChinnnngException("Please enter a valid type field");
-        };
-        case "utilities" -> switch (expenseTypeString) {
-        case "water" -> new Utilities(expenseDescriptionString, expenseDate, expenseAmount, UtilityType.WATER);
-        case "electricity" ->
-                new Utilities(expenseDescriptionString, expenseDate, expenseAmount, UtilityType.ELECTRICITY);
-        case "gas" -> new Utilities(expenseDescriptionString, expenseDate, expenseAmount, UtilityType.GAS);
-        default -> throw new KaChinnnngException("Please enter a valid field type");
-        };
-        default -> throw new KaChinnnngException("Please enter a valid category");
-        };
+        if ("food".equals(expenseCategoryString)) {
+            if ("breakfast".equals(expenseTypeString)) {
+                return new Food(expenseDescriptionString, expenseDate, expenseAmount, MealType.BREAKFAST);
+            } else if ("lunch".equals(expenseTypeString)) {
+                return new Food(expenseDescriptionString, expenseDate, expenseAmount, MealType.LUNCH);
+            } else if ("dinner".equals(expenseTypeString)) {
+                return new Food(expenseDescriptionString, expenseDate, expenseAmount, MealType.DINNER);
+            } else {
+                throw new KaChinnnngException("Please enter a valid type field");
+            }
+        } else if ("transport".equals(expenseCategoryString)) {
+            if ("train".equals(expenseTypeString)) {
+                return new Transport(expenseDescriptionString, expenseDate, expenseAmount, TransportationType.TRAIN);
+            } else if ("bus".equals(expenseTypeString)) {
+                return new Transport(expenseDescriptionString, expenseDate, expenseAmount, TransportationType.BUS);
+            } else if ("taxi".equals(expenseTypeString)) {
+                return new Transport(expenseDescriptionString, expenseDate, expenseAmount, TransportationType.TAXI);
+            } else if ("fuel".equals(expenseTypeString)) {
+                return new Transport(expenseDescriptionString, expenseDate, expenseAmount, TransportationType.FUEL);
+            } else {
+                throw new KaChinnnngException("Please enter a valid type field");
+            }
+        } else if ("utilities".equals(expenseCategoryString)) {
+            if ("water".equals(expenseTypeString)) {
+                return new Utilities(expenseDescriptionString, expenseDate, expenseAmount, UtilityType.WATER);
+            } else if ("electricity".equals(expenseTypeString)) {
+                return new Utilities(expenseDescriptionString, expenseDate, expenseAmount, UtilityType.ELECTRICITY);
+            } else if ("gas".equals(expenseTypeString)) {
+                return new Utilities(expenseDescriptionString, expenseDate, expenseAmount, UtilityType.GAS);
+            } else {
+                throw new KaChinnnngException("Please enter a valid field type");
+            }
+        } else {
+            throw new KaChinnnngException("Please enter a valid category");
+        }
     }
 
     public static int getIndex(HashMap<String, String> argumentsByFields) throws KaChinnnngException {
