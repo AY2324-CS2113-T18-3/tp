@@ -66,31 +66,31 @@ public class ExpenseParser {
         }
 
         return switch (expenseCategoryString) {
-            case "food" -> switch (expenseTypeString) {
-                case "breakfast" -> new Food(expenseDescriptionString, expenseDate, expenseAmount, MealType.BREAKFAST);
-                case "lunch" -> new Food(expenseDescriptionString, expenseDate, expenseAmount, MealType.LUNCH);
-                case "dinner" -> new Food(expenseDescriptionString, expenseDate, expenseAmount, MealType.DINNER);
-                default -> throw new KaChinnnngException("Please enter a valid type field");
-            };
-            case "transport" -> switch (expenseTypeString) {
-                case "train" ->
-                        new Transport(expenseDescriptionString, expenseDate, expenseAmount, TransportationType.TRAIN);
-                case "bus" ->
-                        new Transport(expenseDescriptionString, expenseDate, expenseAmount, TransportationType.BUS);
-                case "taxi" ->
-                        new Transport(expenseDescriptionString, expenseDate, expenseAmount, TransportationType.TAXI);
-                case "fuel" ->
-                        new Transport(expenseDescriptionString, expenseDate, expenseAmount, TransportationType.FUEL);
-                default -> throw new KaChinnnngException("Please enter a valid type field");
-            };
-            case "utilities" -> switch (expenseTypeString) {
-                case "water" -> new Utilities(expenseDescriptionString, expenseDate, expenseAmount, UtilityType.WATER);
-                case "electricity" ->
-                        new Utilities(expenseDescriptionString, expenseDate, expenseAmount, UtilityType.ELECTRICITY);
-                case "gas" -> new Utilities(expenseDescriptionString, expenseDate, expenseAmount, UtilityType.GAS);
-                default -> throw new KaChinnnngException("Please enter a valid field type");
-            };
-            default -> throw new KaChinnnngException("Please enter a valid category");
+        case "food" -> switch (expenseTypeString) {
+        case "breakfast" -> new Food(expenseDescriptionString, expenseDate, expenseAmount, MealType.BREAKFAST);
+        case "lunch" -> new Food(expenseDescriptionString, expenseDate, expenseAmount, MealType.LUNCH);
+        case "dinner" -> new Food(expenseDescriptionString, expenseDate, expenseAmount, MealType.DINNER);
+        default -> throw new KaChinnnngException("Please enter a valid type field");
+        };
+        case "transport" -> switch (expenseTypeString) {
+        case "train" ->
+                new Transport(expenseDescriptionString, expenseDate, expenseAmount, TransportationType.TRAIN);
+        case "bus" ->
+                new Transport(expenseDescriptionString, expenseDate, expenseAmount, TransportationType.BUS);
+        case "taxi" ->
+                new Transport(expenseDescriptionString, expenseDate, expenseAmount, TransportationType.TAXI);
+        case "fuel" ->
+                new Transport(expenseDescriptionString, expenseDate, expenseAmount, TransportationType.FUEL);
+        default -> throw new KaChinnnngException("Please enter a valid type field");
+        };
+        case "utilities" -> switch (expenseTypeString) {
+        case "water" -> new Utilities(expenseDescriptionString, expenseDate, expenseAmount, UtilityType.WATER);
+        case "electricity" ->
+                new Utilities(expenseDescriptionString, expenseDate, expenseAmount, UtilityType.ELECTRICITY);
+        case "gas" -> new Utilities(expenseDescriptionString, expenseDate, expenseAmount, UtilityType.GAS);
+        default -> throw new KaChinnnngException("Please enter a valid field type");
+        };
+        default -> throw new KaChinnnngException("Please enter a valid category");
         };
     }
 
