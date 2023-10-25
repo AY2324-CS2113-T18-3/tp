@@ -42,7 +42,7 @@ Income: salary for October | Date: 01/Oct/2023 | Amount: $5000.00
 ____________________________________________________________
 ____________________________________________________________
 Got it. I've added this expense:
-Food Expense: lunch | Date: 01/Oct/2023 | Amount: $10.00
+Food Expense (LUNCH): pgp canteen | Date: 01/Oct/2023 | Amount: $10.00
 ____________________________________________________________
 ____________________________________________________________
 ____________________________________________________________
@@ -51,7 +51,7 @@ Here are your incomes:
 ____________________________________________________________
 ____________________________________________________________
 Here are your expenses:
-1. Food Expense: lunch | Date: 01/Oct/2023 | Amount: $10.00
+1. Food Expense (LUNCH): pgp canteen | Date: 01/Oct/2023 | Amount: $10.00
 ____________________________________________________________
 ____________________________________________________________
 Here are your incomes:
@@ -59,7 +59,7 @@ Here are your incomes:
 Total income is: $5000.00.
 
 Here are your expenses:
-1. Food Expense: lunch | Date: 01/Oct/2023 | Amount: $10.00
+1. Food Expense (LUNCH): pgp canteen | Date: 01/Oct/2023 | Amount: $10.00
 Total expenses is: $10.00.
 
 Total balance is: $4990.00.
@@ -70,7 +70,7 @@ Income: salary for October | Date: 01/Oct/2023 | Amount: $5000.00
 ____________________________________________________________
 ____________________________________________________________
 Noted. This expense record has been deleted:
-Food Expense: lunch | Date: 01/Oct/2023 | Amount: $10.00
+Food Expense (LUNCH): pgp canteen | Date: 01/Oct/2023 | Amount: $10.00
 ____________________________________________________________
 ____________________________________________________________
 Bye. Hope to see you again soon!

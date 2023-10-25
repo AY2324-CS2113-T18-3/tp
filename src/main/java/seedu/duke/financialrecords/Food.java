@@ -40,7 +40,7 @@ public class Food extends Expense {
      */
     @Override
     public String toString() {
-        return "Food Expense: " + getDescription() +
+        return "Food Expense" + " (" + getMealType() + "): " + getDescription() +
                 " | Date: " + getDateString() + " | Amount: $" + String.format("%.2f", getAmount());
     }
 }

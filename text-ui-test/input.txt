@@ -2,7 +2,7 @@ James Gosling
 hi
 help
 add income /de salary for October /date 01/10/2023 /amt 5000.00
-add expense /cat food /de lunch /date 01/10/2023 /amt 10.00
+add expense /cat food /type lunch /de pgp canteen /date 01/10/2023 /amt 10.00
 list income
 list expense
 list

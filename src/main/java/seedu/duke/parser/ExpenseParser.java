@@ -17,6 +17,7 @@ import java.util.HashMap;
 
 public class ExpenseParser {
     public static final String CATEGORY_FIELD = "ca";
+    public static final String TYPE_FIELD = "ty";
     public static final String DESCRIPTION_FIELD = "de";
     public static final String DATE_FIELD = "da";
     public static final String AMOUNT_FIELD = "am";
@@ -39,6 +40,7 @@ public class ExpenseParser {
 
     public static Expense parseExpense(HashMap<String, String> argumentsByField) throws KaChinnnngException {
         if (!argumentsByField.containsKey(CATEGORY_FIELD) ||
+                !argumentsByField.containsKey((TYPE_FIELD)) ||
                 !argumentsByField.containsKey(DESCRIPTION_FIELD) ||
                 !argumentsByField.containsKey(DATE_FIELD) ||
                 !argumentsByField.containsKey(AMOUNT_FIELD)) {
@@ -46,6 +48,7 @@ public class ExpenseParser {
         }
 
         String expenseCategoryString = argumentsByField.get(CATEGORY_FIELD).toLowerCase();
+        String expenseTypeString = argumentsByField.get(TYPE_FIELD).toLowerCase();
         String expenseDescriptionString = argumentsByField.get(DESCRIPTION_FIELD);
         String expenseDateString = argumentsByField.get(DATE_FIELD);
         String expenseAmountString = argumentsByField.get(AMOUNT_FIELD);
@@ -62,15 +65,33 @@ public class ExpenseParser {
             throw new KaChinnnngException("Expense amount must be between $0.01 and $999999.99");
         }
 
-        if (expenseCategoryString.equals("food")) {
-            return new Food(expenseDescriptionString, expenseDate, expenseAmount, MealType.NONE);
-        } else if (expenseCategoryString.equals("transport")){
-            return new Transport(expenseDescriptionString, expenseDate, expenseAmount, TransportationType.NONE);
-        } else if (expenseCategoryString.equals("utilities")) {
-            return new Utilities(expenseDescriptionString, expenseDate, expenseAmount, UtilityType.NONE);
-        } else {
-            throw new KaChinnnngException("Please enter a valid category");
-        }
+        return switch (expenseCategoryString) {
+            case "food" -> switch (expenseTypeString) {
+                case "breakfast" -> new Food(expenseDescriptionString, expenseDate, expenseAmount, MealType.BREAKFAST);
+                case "lunch" -> new Food(expenseDescriptionString, expenseDate, expenseAmount, MealType.LUNCH);
+                case "dinner" -> new Food(expenseDescriptionString, expenseDate, expenseAmount, MealType.DINNER);
+                default -> throw new KaChinnnngException("Please enter a valid type field");
+            };
+            case "transport" -> switch (expenseTypeString) {
+                case "train" ->
+                        new Transport(expenseDescriptionString, expenseDate, expenseAmount, TransportationType.TRAIN);
+                case "bus" ->
+                        new Transport(expenseDescriptionString, expenseDate, expenseAmount, TransportationType.BUS);
+                case "taxi" ->
+                        new Transport(expenseDescriptionString, expenseDate, expenseAmount, TransportationType.TAXI);
+                case "fuel" ->
+                        new Transport(expenseDescriptionString, expenseDate, expenseAmount, TransportationType.FUEL);
+                default -> throw new KaChinnnngException("Please enter a valid type field");
+            };
+            case "utilities" -> switch (expenseTypeString) {
+                case "water" -> new Utilities(expenseDescriptionString, expenseDate, expenseAmount, UtilityType.WATER);
+                case "electricity" ->
+                        new Utilities(expenseDescriptionString, expenseDate, expenseAmount, UtilityType.ELECTRICITY);
+                case "gas" -> new Utilities(expenseDescriptionString, expenseDate, expenseAmount, UtilityType.GAS);
+                default -> throw new KaChinnnngException("Please enter a valid field type");
+            };
+            default -> throw new KaChinnnngException("Please enter a valid category");
+        };
     }
 
     public static int getIndex(HashMap<String, String> argumentsByFields) throws KaChinnnngException {

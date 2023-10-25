@@ -40,7 +40,7 @@ public class Utilities extends Expense {
      */
     @Override
     public String toString() {
-        return "Utilities Expense: " + getDescription() +
+        return "Utilities Expense" + " (" + getUtilityType() + "): " + getDescription() +
                 " | Date: " + getDateString() + " | Amount: $" + String.format("%.2f", getAmount());
     }
 }

@@ -40,7 +40,7 @@ public class Transport extends Expense {
      */
     @Override
     public String toString() {
-        return "Transportation Expense: " + getDescription() +
+        return "Transportation Expense" + " (" + getTransportationType() + "): " + getDescription() +
                 " | Date: " + getDateString() + " | Amount: $" + String.format("%.2f", getAmount());
     }
 }

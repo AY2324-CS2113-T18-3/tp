@@ -46,15 +46,16 @@ public class ExpenseManager extends Commands{
     private HashMap<String, String> extractExpenseFields(String details) throws KaChinnnngException{
         HashMap<String,String> expenseFields = new HashMap<>();
 
-        String[] parts = details.split("/cat | /de | /date | /amt ");
+        String[] parts = details.split("/cat | /type | /de | /date | /amt ");
 
-        if(parts.length != 5) {
+        if(parts.length != 6) {
             throw new KaChinnnngException("Missing fields detected");
         }
         expenseFields.put(ExpenseParser.CATEGORY_FIELD, parts[1].trim());
-        expenseFields.put(ExpenseParser.DESCRIPTION_FIELD, parts[2].trim());
-        expenseFields.put(ExpenseParser.DATE_FIELD, parts[3].trim());
-        expenseFields.put(ExpenseParser.AMOUNT_FIELD, parts[4].trim());
+        expenseFields.put(ExpenseParser.TYPE_FIELD, parts[2].trim());
+        expenseFields.put(ExpenseParser.DESCRIPTION_FIELD, parts[3].trim());
+        expenseFields.put(ExpenseParser.DATE_FIELD, parts[4].trim());
+        expenseFields.put(ExpenseParser.AMOUNT_FIELD, parts[5].trim());
 
         return expenseFields;
     }
