@@ -65,7 +65,7 @@ public class Ui {
      *
      * @param income Income object created from the provided fields
      */
-    public void printIncomeAddedMessage(Income income) {
+    public static void printIncomeAddedMessage(Income income) {
         System.out.println("Got it. I've added this income:\n" + income.toString());
     }
 

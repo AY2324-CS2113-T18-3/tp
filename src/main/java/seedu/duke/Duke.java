@@ -2,21 +2,28 @@ package seedu.duke;
 
 
 import seedu.duke.commands.Balance;
+import seedu.duke.commands.ClearAll;
+import seedu.duke.commands.ClearExpenses;
+import seedu.duke.commands.ClearIncomes;
 import seedu.duke.commands.DeleteExpenseCommand;
 import seedu.duke.commands.DeleteIncomeCommand;
 import seedu.duke.commands.ExpenseLister;
+import seedu.duke.commands.ExpenseManager;
+import seedu.duke.commands.FindCommand;
 import seedu.duke.commands.IncomeLister;
 import seedu.duke.commands.IncomeManager;
-import seedu.duke.commands.ExpenseManager;
+import seedu.duke.commands.KaChinnnngException;
 import seedu.duke.commands.ListCommand;
 import seedu.duke.commands.UsageInstructions;
-import seedu.duke.commands.FindCommand;
-import seedu.duke.commands.KaChinnnngException;
 import seedu.duke.financialrecords.Income;
 import seedu.duke.financialrecords.Expense;
+import seedu.duke.storage.GetFromTxt;
+import seedu.duke.storage.SaveToTxt;
 import seedu.duke.ui.Ui;
 import seedu.duke.parser.Parser;
 import seedu.duke.parser.FindParser;
+
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 /**
@@ -27,17 +34,28 @@ public class Duke {
     private Ui ui;
     private ArrayList<Income> incomes;
     private ArrayList<Expense> expenses;
+    private String storagePath;
+    private SaveToTxt save;
+    private GetFromTxt get;
 
     public Duke() {
         ui = new Ui();
         incomes = new ArrayList<>();
         expenses = new ArrayList<>();
+        storagePath = "KaChinnnngggg.txt";
+        save = new SaveToTxt(storagePath);
+        get = new GetFromTxt(storagePath);
     }
     /**
      * This method runs the program.
      */
     public void run() {
         Ui.printWelcomeMessage();
+        try {
+            get.getFromTextFile(incomes, expenses);
+        } catch (FileNotFoundException e) {
+            System.out.println("\tOOPS!!! File not found.");
+        }
         boolean isExit = false;
         while (!isExit) {
             try {
@@ -55,9 +73,6 @@ public class Duke {
                         incomeCommand.execute();
                         Income newIncome = incomeCommand.getNewIncome();
                         incomes.add(newIncome);
-                        Ui.showLineDivider();
-                        ui.printIncomeAddedMessage(newIncome);
-                        Ui.showLineDivider();
                     } catch (KaChinnnngException e) {
                         Ui.showLineDivider();
                         System.out.println(e.getMessage());
@@ -91,9 +106,9 @@ public class Duke {
                     break;
 
                 case "list":
-                    ui.showLineDivider();
+                    Ui.showLineDivider();
                     new ListCommand(incomes, expenses, ui).execute();
-                    ui.showLineDivider();
+                    Ui.showLineDivider();
                     break;
 
                 case "delete_income":
@@ -132,7 +147,21 @@ public class Duke {
                     }
                     Ui.showLineDivider();
                     break;
-
+                case "clear_incomes":
+                    Ui.showLineDivider();
+                    new ClearIncomes(incomes).clearAllIncomes();
+                    Ui.showLineDivider();
+                    break;
+                case "clear_expenses":
+                    Ui.showLineDivider();
+                    new ClearExpenses(expenses).clearAllIncomes();
+                    Ui.showLineDivider();
+                    break;
+                case "clear_all":
+                    Ui.showLineDivider();
+                    new ClearAll(incomes, expenses).clearAllIncomeAndExpense();
+                    Ui.showLineDivider();
+                    break;
                 default:
                     Ui.showLineDivider();
                     System.out.println("Invalid command. Please try again.");
@@ -142,6 +171,7 @@ public class Duke {
             } catch (KaChinnnngException e) {
                 System.out.println(e.getMessage());
             }
+            save.saveIncomeAndExpense(incomes,expenses);
         }
         ui.printGoodbyeMessage();
     }

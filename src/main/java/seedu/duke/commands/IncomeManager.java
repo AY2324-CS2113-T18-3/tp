@@ -1,6 +1,7 @@
 package seedu.duke.commands;
 
 import seedu.duke.parser.IncomeParser;
+import seedu.duke.ui.Ui;
 import java.util.HashMap;
 import seedu.duke.financialrecords.Income;
 
@@ -53,6 +54,9 @@ public class IncomeManager extends Commands{
     public void execute() throws KaChinnnngException {
         HashMap<String, String> incomeFields = extractIncomeFields(details);
         newIncome = IncomeParser.parseIncome(incomeFields);
+        Ui.showLineDivider();
+        Ui.printIncomeAddedMessage(newIncome);
+        Ui.showLineDivider();
         LOGGER.log(Level.INFO, "successful parsing of income"); // logging successful parsing of income
     }
 

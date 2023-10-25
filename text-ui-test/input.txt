@@ -8,4 +8,7 @@ list expense
 list
 delete income 1
 delete expense 1
+clear incomes
+clear expenses
+clear all
 exit

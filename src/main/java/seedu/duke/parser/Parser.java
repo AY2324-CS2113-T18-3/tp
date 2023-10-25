@@ -75,6 +75,12 @@ public class Parser {
             resultCommand = "balance";
         } else if (commandLowerCase.startsWith("find")) {
             resultCommand = "find";
+        } else if (commandLowerCase.startsWith("clear incomes")) {
+            resultCommand = "clear_incomes";
+        } else if (commandLowerCase.startsWith("clear expenses")) {
+            resultCommand = "clear_expenses";
+        } else if (commandLowerCase.startsWith("clear all")) {
+            resultCommand = "clear_all";
         } else {
             resultCommand = "invalid";
         }

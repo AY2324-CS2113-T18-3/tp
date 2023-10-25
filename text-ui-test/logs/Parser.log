@@ -1,0 +1,112 @@
+Oct. 25, 2023 3:31:34 AM seedu.duke.parser.Parser parse
+INFO: Parsing user input:James Gosling
+Oct. 25, 2023 3:31:34 AM seedu.duke.parser.Parser parse
+INFO: Parsed command: invalid
+Oct. 25, 2023 3:31:34 AM seedu.duke.parser.Parser parse
+INFO: Parsing user input:hi
+Oct. 25, 2023 3:31:34 AM seedu.duke.parser.Parser parse
+INFO: Parsed command: invalid
+Oct. 25, 2023 3:31:34 AM seedu.duke.parser.Parser parse
+INFO: Parsing user input:help
+Oct. 25, 2023 3:31:34 AM seedu.duke.parser.Parser parse
+INFO: Parsed command: help
+Oct. 25, 2023 3:31:34 AM seedu.duke.parser.Parser parse
+INFO: Parsing user input:add income /de salary for October /date 01/10/2023 /amt 5000.00
+Oct. 25, 2023 3:31:34 AM seedu.duke.parser.Parser parse
+INFO: Parsed command: add_income
+Oct. 25, 2023 3:31:34 AM seedu.duke.parser.Parser parse
+INFO: Parsing user input:add expense /cat food /de lunch /date 01/10/2023 /amt 10.00
+Oct. 25, 2023 3:31:34 AM seedu.duke.parser.Parser parse
+INFO: Parsed command: add_expense
+Oct. 25, 2023 3:31:34 AM seedu.duke.parser.Parser parse
+INFO: Parsing user input:list income
+Oct. 25, 2023 3:31:34 AM seedu.duke.parser.Parser parse
+INFO: Parsed command: list_income
+Oct. 25, 2023 3:31:34 AM seedu.duke.parser.Parser parse
+INFO: Parsing user input:list expense
+Oct. 25, 2023 3:31:34 AM seedu.duke.parser.Parser parse
+INFO: Parsed command: list_expense
+Oct. 25, 2023 3:31:34 AM seedu.duke.parser.Parser parse
+INFO: Parsing user input:list
+Oct. 25, 2023 3:31:34 AM seedu.duke.parser.Parser parse
+INFO: Parsed command: list
+Oct. 25, 2023 3:31:34 AM seedu.duke.parser.Parser parse
+INFO: Parsing user input:delete income 1
+Oct. 25, 2023 3:31:34 AM seedu.duke.parser.Parser parse
+INFO: Parsed command: delete_income
+Oct. 25, 2023 3:31:34 AM seedu.duke.parser.Parser parse
+INFO: Parsing user input:delete expense 1
+Oct. 25, 2023 3:31:34 AM seedu.duke.parser.Parser parse
+INFO: Parsed command: delete_expense
+Oct. 25, 2023 3:31:34 AM seedu.duke.parser.Parser parse
+INFO: Parsing user input:clear incomes
+Oct. 25, 2023 3:31:34 AM seedu.duke.parser.Parser parse
+INFO: Parsed command: clear_incomes
+Oct. 25, 2023 3:31:34 AM seedu.duke.parser.Parser parse
+INFO: Parsing user input:clear expenses
+Oct. 25, 2023 3:31:34 AM seedu.duke.parser.Parser parse
+INFO: Parsed command: clear_expenses
+Oct. 25, 2023 3:31:34 AM seedu.duke.parser.Parser parse
+INFO: Parsing user input:clear all
+Oct. 25, 2023 3:31:34 AM seedu.duke.parser.Parser parse
+INFO: Parsed command: clear_all
+Oct. 25, 2023 3:31:34 AM seedu.duke.parser.Parser parse
+INFO: Parsing user input:exit
+Oct. 25, 2023 3:31:34 AM seedu.duke.parser.Parser parse
+INFO: Parsed command: exit
+Oct. 25, 2023 3:31:49 AM seedu.duke.parser.Parser parse
+INFO: Parsing user input:James Gosling
+Oct. 25, 2023 3:31:49 AM seedu.duke.parser.Parser parse
+INFO: Parsed command: invalid
+Oct. 25, 2023 3:31:49 AM seedu.duke.parser.Parser parse
+INFO: Parsing user input:hi
+Oct. 25, 2023 3:31:49 AM seedu.duke.parser.Parser parse
+INFO: Parsed command: invalid
+Oct. 25, 2023 3:31:49 AM seedu.duke.parser.Parser parse
+INFO: Parsing user input:help
+Oct. 25, 2023 3:31:49 AM seedu.duke.parser.Parser parse
+INFO: Parsed command: help
+Oct. 25, 2023 3:31:49 AM seedu.duke.parser.Parser parse
+INFO: Parsing user input:add income /de salary for October /date 01/10/2023 /amt 5000.00
+Oct. 25, 2023 3:31:49 AM seedu.duke.parser.Parser parse
+INFO: Parsed command: add_income
+Oct. 25, 2023 3:31:49 AM seedu.duke.parser.Parser parse
+INFO: Parsing user input:add expense /cat food /de lunch /date 01/10/2023 /amt 10.00
+Oct. 25, 2023 3:31:49 AM seedu.duke.parser.Parser parse
+INFO: Parsed command: add_expense
+Oct. 25, 2023 3:31:49 AM seedu.duke.parser.Parser parse
+INFO: Parsing user input:list income
+Oct. 25, 2023 3:31:49 AM seedu.duke.parser.Parser parse
+INFO: Parsed command: list_income
+Oct. 25, 2023 3:31:49 AM seedu.duke.parser.Parser parse
+INFO: Parsing user input:list expense
+Oct. 25, 2023 3:31:49 AM seedu.duke.parser.Parser parse
+INFO: Parsed command: list_expense
+Oct. 25, 2023 3:31:49 AM seedu.duke.parser.Parser parse
+INFO: Parsing user input:list
+Oct. 25, 2023 3:31:49 AM seedu.duke.parser.Parser parse
+INFO: Parsed command: list
+Oct. 25, 2023 3:31:49 AM seedu.duke.parser.Parser parse
+INFO: Parsing user input:delete income 1
+Oct. 25, 2023 3:31:49 AM seedu.duke.parser.Parser parse
+INFO: Parsed command: delete_income
+Oct. 25, 2023 3:31:49 AM seedu.duke.parser.Parser parse
+INFO: Parsing user input:delete expense 1
+Oct. 25, 2023 3:31:49 AM seedu.duke.parser.Parser parse
+INFO: Parsed command: delete_expense
+Oct. 25, 2023 3:31:49 AM seedu.duke.parser.Parser parse
+INFO: Parsing user input:clear incomes
+Oct. 25, 2023 3:31:49 AM seedu.duke.parser.Parser parse
+INFO: Parsed command: clear_incomes
+Oct. 25, 2023 3:31:49 AM seedu.duke.parser.Parser parse
+INFO: Parsing user input:clear expenses
+Oct. 25, 2023 3:31:49 AM seedu.duke.parser.Parser parse
+INFO: Parsed command: clear_expenses
+Oct. 25, 2023 3:31:49 AM seedu.duke.parser.Parser parse
+INFO: Parsing user input:clear all
+Oct. 25, 2023 3:31:49 AM seedu.duke.parser.Parser parse
+INFO: Parsed command: clear_all
+Oct. 25, 2023 3:31:49 AM seedu.duke.parser.Parser parse
+INFO: Parsing user input:exit
+Oct. 25, 2023 3:31:49 AM seedu.duke.parser.Parser parse
+INFO: Parsed command: exit

@@ -7,6 +7,16 @@
 ## Design & implementation
 
 {Describe the design and implementation of the product. Use UML diagrams and short code snippets where applicable.}
+### IncomeManager
+
+the IncomeManager is facilitated by `IncomeParser`, `IncomeManager`, `IncomeList` and `Ui`.
+
+1. The user inputs the command to add income. This input is then passed to `IncomeParser` to be parsed.
+2. `IncomeParser` then parses the input and returns a `Income` object.
+3. `IncomeManager` then adds the `Income` object to the `IncomeList`.
+4. `IncomeManager` then returns a `String` to `Ui` to be printed out to the user.
+
+![incomeManager_sequence_diagram.png](..%2Fimages%2FincomeManager_sequence_diagram.png)
 
 
 ## Product scope
