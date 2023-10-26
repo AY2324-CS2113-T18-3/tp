@@ -5,6 +5,7 @@ import seedu.duke.commands.KaChinnnngException;
 import seedu.duke.financialrecords.Food;
 import seedu.duke.financialrecords.Transport;
 import seedu.duke.financialrecords.Utilities;
+import seedu.duke.financialrecords.expensetypes.MealType;
 
 import java.time.LocalDate;
 import java.util.HashMap;
@@ -67,6 +68,7 @@ public class ExpenseParserTest {
         expenseFields.put(ExpenseParser.DESCRIPTION_FIELD, "Chicken Rice");
         expenseFields.put(ExpenseParser.DATE_FIELD, "12/10/2020");
         expenseFields.put(ExpenseParser.AMOUNT_FIELD, "3.50");
+        expenseFields.put(ExpenseParser.TYPE_FIELD, "lunch");
 
         assertTrue(ExpenseParser.parseExpense(expenseFields) instanceof Food);
     }
@@ -84,6 +86,7 @@ public class ExpenseParserTest {
         expenseFields.put(ExpenseParser.DESCRIPTION_FIELD, "Bus");
         expenseFields.put(ExpenseParser.DATE_FIELD, "12/10/2020");
         expenseFields.put(ExpenseParser.AMOUNT_FIELD, "1.50");
+        expenseFields.put(ExpenseParser.TYPE_FIELD, "bus");
 
         assertTrue(ExpenseParser.parseExpense(expenseFields) instanceof Transport);
     }
@@ -101,6 +104,7 @@ public class ExpenseParserTest {
         expenseFields.put(ExpenseParser.DESCRIPTION_FIELD, "Electricity");
         expenseFields.put(ExpenseParser.DATE_FIELD, "12/10/2020");
         expenseFields.put(ExpenseParser.AMOUNT_FIELD, "50.00");
+        expenseFields.put(ExpenseParser.TYPE_FIELD, "electricity");
 
         assertTrue(ExpenseParser.parseExpense(expenseFields) instanceof Utilities);
     }
